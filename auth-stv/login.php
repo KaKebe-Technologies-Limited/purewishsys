@@ -1,10 +1,6 @@
-<!-- Database Connection -->
-<!-- Database Connection -->
-<!-- Database Connection -->
-<?php
-include_once ("../database/connect.php");
-?>
-
+<?php 
+   session_start();
+   if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {   ?>
 
 
 
@@ -35,9 +31,9 @@ include_once ("../database/connect.php");
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="login.php" method="post">
+      <form action="php/check-login.php" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" name="email" id="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -45,13 +41,30 @@ include_once ("../database/connect.php");
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" id="password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
+
+        <div class"social-auth-links text-center mt-2 mb-3">
+          <select class="btn btn-block btn-primary btn btn-block btn-danger"
+              name="role" 
+              aria-label="Default select example">
+
+              
+              <option value="">Select User Type</option>
+              
+              <option value="user">User</option>
+              <option value="donor">Donor</option>
+              <option value="staff">Staff</option>
+              <option value="admin">Admin</option>
+
+          </select>
+        </div>
+
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
@@ -61,26 +74,30 @@ include_once ("../database/connect.php");
               </label>
             </div>
           </div>
+
+       
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block text-center mt-2 mb-3">Sign In</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
 
-      <div class="social-auth-links text-center mt-2 mb-3">
+
+<!-- social- auth -->
+      <!-- <div class="social-auth-links text-center mt-2 mb-3">
         <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
         </a>
         <a href="#" class="btn btn-block btn-danger">
           <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
         </a>
-      </div>
+      </div> -->
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="forgot-password-v2.html">I forgot my password</a>
+        <a href="forgot-password.php">I forgot my password</a>
       </p>
       <p class="mb-0">
         <a href="register.php" class="text-center">Register a new membership</a>
@@ -100,3 +117,8 @@ include_once ("../database/connect.php");
 <script src="../dist/js/adminlte.min.js"></script>
 </body>
 </html>
+
+<?php }else{
+	header("../index.php");
+	// header("Location: home.php");
+} ?>

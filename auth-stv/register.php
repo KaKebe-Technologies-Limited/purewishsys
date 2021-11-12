@@ -1,14 +1,3 @@
-<!-- Database Connection -->
-<!-- Database Connection -->
-<!-- Database Connection -->
-<?php
-include_once ("../database/connect.php");
-?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,9 +23,15 @@ include_once ("../database/connect.php");
     <div class="card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form action="login.php" method="post">
+
+
+      <!-- Registration form -->
+      <!-- Registration form -->
+      <!-- Registration form -->
+
+      <form action="#" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Full name">
+          <input type="text" name="name" class="form-control" placeholder="Full name" requried>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -44,7 +39,7 @@ include_once ("../database/connect.php");
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" name="email" class="form-control" placeholder="Email" requried>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -52,7 +47,7 @@ include_once ("../database/connect.php");
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="pass" class="form-control" placeholder="Password" requried>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -60,7 +55,7 @@ include_once ("../database/connect.php");
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retype password">
+          <input type="password"  class="form-control" placeholder="Retype password" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -77,14 +72,19 @@ include_once ("../database/connect.php");
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-4">
+          <!-- <div class="col-4"> -->
             <button type="submit" class="btn btn-primary btn-block">Register</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
 
-      <div class="social-auth-links text-center">
+      <!-- Signup form Ends here -->
+      <!-- Signup form Ends here -->
+      <!-- Signup form Ends here -->
+      <!-- Signup form Ends here -->
+
+      <!-- <div class="social-auth-links text-center">
         <a href="#" class="btn btn-block btn-primary">
           <i class="fab fa-facebook mr-2"></i>
           Sign up using Facebook
@@ -93,9 +93,9 @@ include_once ("../database/connect.php");
           <i class="fab fa-google-plus mr-2"></i>
           Sign up using Google+
         </a>
-      </div>
+      </div> -->
 
-      <a href="login.php" class="text-center">I already have a membership</a>
+      <a href="login.php" class="text-center">I already have an account, Login here...</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
